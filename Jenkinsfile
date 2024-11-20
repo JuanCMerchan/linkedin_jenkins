@@ -25,7 +25,7 @@ pipeline {
   stages {
     stage("Git pull") {
       steps {
-        git url: "git@github.com:JuanCMerchan/Proyecto_distribuidos.git"
+        git url: "git@github.com:JuanCMerchan/Proyecto_distribuidos.git", credentialsId: "personal_key"
       }
     }
     stage("Stash and delete") {
