@@ -30,7 +30,8 @@ pipeline {
     }
     stage("Stash and delete") {
       steps {
-        stash includes: "Monitores/**", name: "stash_test"
+        stash includes: "Monitores/**, Sensores/**", name: "stash_test"
+        sh "ls"
         sh "rm -rf ./*"
         sh "ls"
       }
